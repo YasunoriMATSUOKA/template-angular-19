@@ -162,5 +162,10 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-      - name: Publish playwright result
-        run: npx chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      - name: Run Chromatic
+        uses: chromaui/action@latest
+        with:
+          playwright: true
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        env:
+          CHROMATIC_ARCHIVE_LOCATION: ./playwright-report
