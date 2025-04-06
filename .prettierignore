@@ -40,3 +40,15 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# build related directories
+dist/
+coverage/
+node_modules/
+.angular/
+
+# other directories and files
+.git/
+*.min.js
+*.min.css
+package-lock.json
