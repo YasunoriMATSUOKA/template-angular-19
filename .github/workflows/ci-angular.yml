@@ -42,7 +42,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: workspace
-          path: .
+          path: node_modules
       - name: List directories and files
         run: ls -la
       - name: Lint
@@ -63,7 +63,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: workspace
-          path: .
+          path: node_modules
       - name: Format check
         run: npm run format:check
 
@@ -82,7 +82,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: workspace
-          path: .
+          path: node_modules
       - name: Build
         run: npm run build
 
@@ -101,6 +101,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: workspace
-          path: .
+          path: node_modules
       - name: Test
         run: npm run test:ci
