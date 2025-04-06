@@ -43,6 +43,8 @@ jobs:
         with:
           name: workspace
           path: .
+      - name: List directories and files
+        run: ls -la
       - name: Lint
         run: npm run lint
 
