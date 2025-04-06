@@ -11,7 +11,10 @@
     "lint": "ng lint",
     "format": "prettier --write \"**/*.{ts,html,css,json,js,md,yaml,yml}\"",
     "format:check": "prettier --check \"**/*.{ts,html,css,json,js,md,yaml,yml}\"",
-    "prepare": "husky"
+    "prepare": "husky",
+    "storybook": "ng run template-angular-19:storybook",
+    "build-storybook": "ng run template-angular-19:build-storybook",
+    "chromatic": "npx chromatic"
   },
   "private": true,
   "dependencies": {
@@ -33,14 +36,24 @@
     "@angular-devkit/build-angular": "^19.2.6",
     "@angular/cli": "^19.2.6",
     "@angular/compiler-cli": "^19.2.0",
+    "@compodoc/compodoc": "^1.1.26",
+    "@storybook/addon-docs": "^8.6.12",
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/addon-interactions": "^8.6.12",
+    "@storybook/addon-onboarding": "^8.6.12",
+    "@storybook/angular": "^8.6.12",
+    "@storybook/blocks": "^8.6.12",
+    "@storybook/test": "^8.6.12",
     "@testing-library/angular": "^17.3.7",
     "@testing-library/dom": "^10.0.0",
     "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/user-event": "^14.5.2",
     "@types/jasmine": "~5.1.0",
     "angular-eslint": "19.3.0",
+    "chromatic": "^11.28.0",
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-storybook": "^0.12.0",
     "husky": "^9.1.7",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",
@@ -50,6 +63,7 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
+    "storybook": "^8.6.12",
     "typescript": "~5.7.2",
     "typescript-eslint": "8.27.0"
   },
@@ -60,6 +74,11 @@
     ],
     "*.{html,css,json,js,md,yaml,yml}": [
       "prettier --write"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
     ]
   }
 }

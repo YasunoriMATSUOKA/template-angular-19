@@ -46,6 +46,7 @@ dist/
 coverage/
 node_modules/
 .angular/
+storybook-static/*
 
 # other directories and files
 .git/

@@ -6,6 +6,7 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "editorconfig.editorconfig",
-    "saoudrizwan.claude-dev"
+    "saoudrizwan.claude-dev",
+    "github.vscode-github-actions"
   ]
 }
