@@ -133,3 +133,34 @@ jobs:
           fail-on-cache-miss: true
       - name: Publish storybook
         run: npx chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
+  ci-angular-e2e-test:
+    timeout-minutes: 60
+    needs: ci-angular-setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+      - name: Restore workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+          fail-on-cache-miss: true
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Run Playwright tests
+        run: npm run e2e:report
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+      - name: Publish playwright result
+        run: npx chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
