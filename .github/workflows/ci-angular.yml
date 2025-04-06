@@ -1,4 +1,4 @@
-name: CI Angular
+name: Angular CI
 
 on:
   push:
@@ -11,85 +11,76 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Node.js
+      - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: 22.x
           cache: "npm"
-          path: "package-lock.json"
-      - name: Install Dependencies
+          cache-dependency-path: "package-lock.json"
+      - name: Install dependencies
         run: npm ci
-      - name: Cache node_modules
-        uses: actions/cache@v4
-        id: cache-node-modules
+      - name: Upload workspace
+        uses: actions/upload-artifact@v4
         with:
-          path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          name: workspace
+          path: |
+            .
+            !node_modules/.cache
+            !.git
+          retention-days: 1
 
   ci-angular-lint:
     needs: ci-angular-setup
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Download workspace
+        uses: actions/download-artifact@v4
         with:
-          node-version: "22"
-      - name: Restore node_modules
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
-      - name: Run Lint
+          name: workspace
+          path: .
+      - name: Restore file permissions
+        run: chmod -R +x node_modules/.bin
+      - name: Lint
         run: npm run lint
 
   ci-angular-format-check:
     needs: ci-angular-setup
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Download workspace
+        uses: actions/download-artifact@v4
         with:
-          node-version: "22"
-      - name: Restore node_modules
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
-      - name: Check Formatting
+          name: workspace
+          path: .
+      - name: Restore file permissions
+        run: chmod -R +x node_modules/.bin
+      - name: Format check
         run: npm run format:check
 
   ci-angular-build:
     needs: ci-angular-setup
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Download workspace
+        uses: actions/download-artifact@v4
         with:
-          node-version: "22"
-      - name: Restore node_modules
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
-      - name: Build Project
+          name: workspace
+          path: .
+      - name: Restore file permissions
+        run: chmod -R +x node_modules/.bin
+      - name: Build
         run: npm run build
 
   ci-angular-test:
     needs: ci-angular-setup
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Download workspace
+        uses: actions/download-artifact@v4
         with:
-          node-version: "22"
-      - name: Restore node_modules
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
-      - name: Build Project
+          name: workspace
+          path: .
+      - name: Restore file permissions
+        run: chmod -R +x node_modules/.bin
+      - name: Test
         run: npm run test:ci
