@@ -95,3 +95,41 @@ jobs:
           fail-on-cache-miss: true
       - name: Test
         run: npm run test:ci
+
+  ci-angular-build-storybook:
+    needs: ci-angular-setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+      - name: Restore workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+          fail-on-cache-miss: true
+      - name: Build storybook
+        run: npm run build-storybook
+
+  ci-angular-publish-storybook:
+    needs: ci-angular-setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Chromaticが全Gitヒストリーにアクセスできるよう設定
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+      - name: Restore workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+          fail-on-cache-miss: true
+      - name: Publish storybook
+        run: npx chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
