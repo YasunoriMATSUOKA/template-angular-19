@@ -24,9 +24,7 @@ jobs:
         with:
           name: workspace
           path: |
-            .
-            !node_modules/.cache
-            !.git
+            node_modules
           retention-days: 1
 
   ci-angular-lint:
