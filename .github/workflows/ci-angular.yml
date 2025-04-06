@@ -19,13 +19,11 @@ jobs:
           cache-dependency-path: "package-lock.json"
       - name: Install dependencies
         run: npm ci
-      - name: Upload workspace
-        uses: actions/upload-artifact@v4
+      - name: Cache workspace
+        uses: actions/cache/save@v4
         with:
-          name: workspace
-          path: |
-            node_modules
-          retention-days: 1
+          path: node_modules
+          key: node-modules-${{ github.run_id }}
 
   ci-angular-lint:
     needs: ci-angular-setup
@@ -36,17 +34,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22.x
-          cache: "npm"
-          cache-dependency-path: "package-lock.json"
-      - name: Download workspace
-        uses: actions/download-artifact@v4
+      - name: Restore workspace
+        uses: actions/cache/restore@v4
         with:
-          name: workspace
           path: node_modules
-      - name: List directories and files
-        run: ls -la
-      - name: Restore executable permissions
-        run: chmod -R +x node_modules/.bin
+          key: node-modules-${{ github.run_id }}
+          fail-on-cache-miss: true
       - name: Lint
         run: npm run lint
 
@@ -59,15 +52,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22.x
-          cache: "npm"
-          cache-dependency-path: "package-lock.json"
-      - name: Download workspace
-        uses: actions/download-artifact@v4
+      - name: Restore workspace
+        uses: actions/cache/restore@v4
         with:
-          name: workspace
           path: node_modules
-      - name: Restore executable permissions
-        run: chmod -R +x node_modules/.bin
+          key: node-modules-${{ github.run_id }}
+          fail-on-cache-miss: true
       - name: Format check
         run: npm run format:check
 
@@ -80,15 +70,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22.x
-          cache: "npm"
-          cache-dependency-path: "package-lock.json"
-      - name: Download workspace
-        uses: actions/download-artifact@v4
+      - name: Restore workspace
+        uses: actions/cache/restore@v4
         with:
-          name: workspace
           path: node_modules
-      - name: Restore executable permissions
-        run: chmod -R +x node_modules/.bin
+          key: node-modules-${{ github.run_id }}
+          fail-on-cache-miss: true
       - name: Build
         run: npm run build
 
@@ -101,14 +88,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22.x
-          cache: "npm"
-          cache-dependency-path: "package-lock.json"
-      - name: Download workspace
-        uses: actions/download-artifact@v4
+      - name: Restore workspace
+        uses: actions/cache/restore@v4
         with:
-          name: workspace
           path: node_modules
-      - name: Restore executable permissions
-        run: chmod -R +x node_modules/.bin
+          key: node-modules-${{ github.run_id }}
+          fail-on-cache-miss: true
       - name: Test
         run: npm run test:ci
