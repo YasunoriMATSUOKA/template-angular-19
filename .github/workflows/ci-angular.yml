@@ -45,8 +45,8 @@ jobs:
           path: node_modules
       - name: List directories and files
         run: ls -la
-      - name: Path setting
-        run: export PATH="$PATH:$(pwd)/node_modules/.bin"
+      - name: Restore executable permissions
+        run: chmod -R +x node_modules/.bin
       - name: Lint
         run: npm run lint
 
@@ -66,8 +66,8 @@ jobs:
         with:
           name: workspace
           path: node_modules
-      - name: Path setting
-        run: export PATH="$PATH:$(pwd)/node_modules/.bin"
+      - name: Restore executable permissions
+        run: chmod -R +x node_modules/.bin
       - name: Format check
         run: npm run format:check
 
@@ -87,8 +87,8 @@ jobs:
         with:
           name: workspace
           path: node_modules
-      - name: Path setting
-        run: export PATH="$PATH:$(pwd)/node_modules/.bin"
+      - name: Restore executable permissions
+        run: chmod -R +x node_modules/.bin
       - name: Build
         run: npm run build
 
@@ -108,7 +108,7 @@ jobs:
         with:
           name: workspace
           path: node_modules
-      - name: Path setting
-        run: export PATH="$PATH:$(pwd)/node_modules/.bin"
+      - name: Restore executable permissions
+        run: chmod -R +x node_modules/.bin
       - name: Test
         run: npm run test:ci
