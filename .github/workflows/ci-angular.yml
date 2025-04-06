@@ -23,8 +23,7 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: node_modules
-          key: node-modules-${{ github.run_id }}
-
+          key: node-modules-${{ hashFiles('package-lock.json') }}
   ci-angular-lint:
     needs: ci-angular-setup
     runs-on: ubuntu-latest
