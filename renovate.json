@@ -1,6 +1,26 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
-  ]
+    "config:recommended",
+    "github>lacolaco/renovate-config:automerge-types",
+    "github>lacolaco/renovate-config:ng-update",
+    "github>lacolaco/renovate-config:angular-eslint",
+    "github>lacolaco/renovate-config:storybook"
+  ],
+  "prConcurrentLimit": 0,
+  "rebaseWhen": "never",
+  "minimumReleaseAge": "3 days",
+  "configMigration": true,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "recreateWhen": "auto",
+    "rebaseStalePrs": true,
+    "branchTopic": "lock-file-maintenance",
+    "commitMessageAction": "Lock file maintenance",
+    "schedule": ["before 4am on monday"],
+    "groupName": null,
+    "prBodyDefinitions": {
+      "Change": "All locks refreshed"
+    }
+  }
 }
