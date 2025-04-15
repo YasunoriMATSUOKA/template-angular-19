@@ -8,7 +8,7 @@
     "github>lacolaco/renovate-config:storybook"
   ],
   "prConcurrentLimit": 0,
-  "rebaseWhen": "never",
+  "rebaseWhen": "auto",
   "minimumReleaseAge": "3 days",
   "configMigration": true,
   "lockFileMaintenance": {
