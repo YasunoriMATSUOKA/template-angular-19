@@ -166,6 +166,6 @@ jobs:
         uses: chromaui/action@latest
         with:
           playwright: true
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN_PLAYWRIGHT }}
         env:
-          CHROMATIC_ARCHIVE_LOCATION: ./playwright-report
+          CHROMATIC_ARCHIVE_LOCATION: playwright-report
