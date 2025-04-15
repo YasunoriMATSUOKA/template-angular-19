@@ -167,5 +167,3 @@ jobs:
         with:
           playwright: true
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN_PLAYWRIGHT }}
-        env:
-          CHROMATIC_ARCHIVE_LOCATION: playwright-report
