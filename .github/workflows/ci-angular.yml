@@ -132,7 +132,7 @@ jobs:
           key: node-modules-${{ hashFiles('package-lock.json') }}
           fail-on-cache-miss: true
       - name: Publish storybook
-        run: npx chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }} --exit-once-uploaded
+        run: npx chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
   ci-angular-e2e-test:
     timeout-minutes: 60
@@ -169,4 +169,4 @@ jobs:
           path: test-results/
           retention-days: 30
       - name: Run Chromatic
-        run: npx chromatic --playwright --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN_PLAYWRIGHT }} --exit-once-uploaded
+        run: npx chromatic --playwright --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN_PLAYWRIGHT }}
