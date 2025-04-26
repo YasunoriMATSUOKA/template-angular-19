@@ -75,6 +75,24 @@ jobs:
           path: node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
           fail-on-cache-miss: true
+      - name: Restore environment.development.ts
+        run: |
+          cat << EOF > src/environments/environment.development.ts
+          export const environment = {
+            production: ${{secrets.PRODUCTION}},
+            supabaseUrl: ${{secrets.SUPABASE_URL}},
+            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+          };
+          EOF
+      - name: Restore environment.ts
+        run: |
+          cat << EOF > src/environments/environment.development.ts
+          export const environment = {
+            production: ${{secrets.PRODUCTION}},
+            supabaseUrl: ${{secrets.SUPABASE_URL}},
+            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+          };
+          EOF
       - name: Build
         run: npm run build
 
@@ -93,6 +111,24 @@ jobs:
           path: node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
           fail-on-cache-miss: true
+      - name: Restore environment.development.ts
+        run: |
+          cat << EOF > src/environments/environment.development.ts
+          export const environment = {
+            production: ${{secrets.PRODUCTION}},
+            supabaseUrl: ${{secrets.SUPABASE_URL}},
+            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+          };
+          EOF
+      - name: Restore environment.ts
+        run: |
+          cat << EOF > src/environments/environment.development.ts
+          export const environment = {
+            production: ${{secrets.PRODUCTION}},
+            supabaseUrl: ${{secrets.SUPABASE_URL}},
+            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+          };
+          EOF
       - name: Test
         run: npm run test:ci
 
@@ -111,6 +147,24 @@ jobs:
           path: node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
           fail-on-cache-miss: true
+      - name: Restore environment.development.ts
+        run: |
+          cat << EOF > src/environments/environment.development.ts
+          export const environment = {
+            production: ${{secrets.PRODUCTION}},
+            supabaseUrl: ${{secrets.SUPABASE_URL}},
+            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+          };
+          EOF
+      - name: Restore environment.ts
+        run: |
+          cat << EOF > src/environments/environment.development.ts
+          export const environment = {
+            production: ${{secrets.PRODUCTION}},
+            supabaseUrl: ${{secrets.SUPABASE_URL}},
+            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+          };
+          EOF
       - name: Build storybook
         run: npm run build-storybook
 
@@ -131,6 +185,24 @@ jobs:
           path: node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
           fail-on-cache-miss: true
+      - name: Restore environment.development.ts
+        run: |
+          cat << EOF > src/environments/environment.development.ts
+          export const environment = {
+            production: ${{secrets.PRODUCTION}},
+            supabaseUrl: ${{secrets.SUPABASE_URL}},
+            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+          };
+          EOF
+      - name: Restore environment.ts
+        run: |
+          cat << EOF > src/environments/environment.development.ts
+          export const environment = {
+            production: ${{secrets.PRODUCTION}},
+            supabaseUrl: ${{secrets.SUPABASE_URL}},
+            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+          };
+          EOF
       - name: Publish storybook
         run: npx chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
@@ -154,6 +226,24 @@ jobs:
           fail-on-cache-miss: true
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+      - name: Restore environment.development.ts
+        run: |
+          cat << EOF > src/environments/environment.development.ts
+          export const environment = {
+            production: ${{secrets.PRODUCTION}},
+            supabaseUrl: ${{secrets.SUPABASE_URL}},
+            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+          };
+          EOF
+      - name: Restore environment.ts
+        run: |
+          cat << EOF > src/environments/environment.development.ts
+          export const environment = {
+            production: ${{secrets.PRODUCTION}},
+            supabaseUrl: ${{secrets.SUPABASE_URL}},
+            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+          };
+          EOF
       - name: Run Playwright tests
         run: npm run e2e:report
       - uses: actions/upload-artifact@v4
