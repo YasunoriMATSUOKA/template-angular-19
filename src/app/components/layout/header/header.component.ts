@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <header class="navbar bg-base-100 border-b">
+    <header class="navbar bg-base-100">
       <!-- ハンバーガーメニューボタン（モバイル用） -->
       <div class="navbar-start">
         <label

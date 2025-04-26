@@ -6,21 +6,94 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   template: `
-    <footer class="footer p-10 bg-base-200 text-base-content mt-auto">
+    <footer
+      class="footer px-10 py-4 bg-base-200 text-base-content mt-auto lg:flex lg:flex-row lg:justify-between"
+    >
       <nav>
         <h6 class="footer-title">リンク</h6>
-        <a routerLink="/" class="link link-hover">ホーム</a>
-        <a routerLink="/privacy-policy" class="link link-hover"
-          >プライバシーポリシー</a
-        >
-        <a routerLink="/terms-of-service" class="link link-hover">利用規約</a>
-        <a routerLink="/legal" class="link link-hover"
-          >特定商取引法に関わる表示</a
-        >
+        <div class="flex flex-row flex-wrap gap-4">
+          <a routerLink="/" class="link link-hover flex items-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              />
+            </svg>
+            ホーム
+          </a>
+          <a
+            routerLink="/privacy-policy"
+            class="link link-hover flex items-center gap-1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              />
+            </svg>
+            プライバシーポリシー
+          </a>
+          <a
+            routerLink="/terms-of-service"
+            class="link link-hover flex items-center gap-1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            利用規約
+          </a>
+          <a
+            routerLink="/legal"
+            class="link link-hover flex items-center gap-1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+              />
+            </svg>
+            特定商取引法に関わる表示
+          </a>
+        </div>
       </nav>
 
       <nav>
-        <h6 class="footer-title">ソーシャル</h6>
+        <h6 class="footer-title">外部リンク</h6>
         <a
           href="https://github.com/YasunoriMATSUOKA/template-angular-19"
           target="_blank"
@@ -44,7 +117,11 @@ import { RouterLink } from '@angular/router';
 
       <div>
         <h6 class="footer-title">会社情報</h6>
-        <p>Template Angular 19</p>
+        <p>
+          <a href="https://proof-of-youf-life.io/" class="link"
+            >Proof of Your Life</a
+          >
+        </p>
         <p>© 2025 - All rights reserved</p>
       </div>
     </footer>

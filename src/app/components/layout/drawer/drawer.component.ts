@@ -6,7 +6,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   standalone: true,
   imports: [RouterLink, RouterLinkActive],
   template: `
-    <aside class="menu bg-base-200 w-80 h-screen border-r">
+    <aside class="menu bg-base-200 w-80 h-screen">
       <!-- アプリロゴ -->
       <div class="p-4 flex justify-center">
         <img
