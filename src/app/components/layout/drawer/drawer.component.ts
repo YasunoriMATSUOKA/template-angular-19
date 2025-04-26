@@ -47,22 +47,20 @@ import { VercelIconComponent } from '../../icons/vercel-icon.component';
     VercelIconComponent,
   ],
   template: `
-    <aside
-      class="flex flex-col items-start justify-start menu bg-base-200 h-screen"
-    >
+    <aside class="bg-base-200 w-80 h-screen overflow-y-auto">
       <!-- アプリロゴ -->
-      <div class="flex w-full items-center justify-center">
+      <div class="sticky top-0 z-10 flex justify-center bg-base-200">
         <img
           src="https://angular.io/assets/images/logos/angular/angular.svg"
           alt="Angular Logo"
-          width="100"
-          height="100"
+          width="80"
+          height="80"
         />
       </div>
 
       <!-- メニューリスト -->
-      <ul class="menu flex">
-        <li>
+      <div class="menu">
+        <div class="mb-6">
           <h2 class="menu-title">メニュー</h2>
           <ul>
             <li>
@@ -94,9 +92,9 @@ import { VercelIconComponent } from '../../icons/vercel-icon.component';
               </a>
             </li>
           </ul>
-        </li>
+        </div>
 
-        <li class="mt-4">
+        <div>
           <h2 class="menu-title">外部リンク</h2>
           <ul>
             <li>
@@ -264,8 +262,8 @@ import { VercelIconComponent } from '../../icons/vercel-icon.component';
               </a>
             </li>
           </ul>
-        </li>
-      </ul>
+        </div>
+      </div>
     </aside>
   `,
 })
