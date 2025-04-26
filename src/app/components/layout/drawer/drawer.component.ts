@@ -47,46 +47,61 @@ import { VercelIconComponent } from '../../icons/vercel-icon.component';
     VercelIconComponent,
   ],
   template: `
-    <aside class="bg-base-200 w-80 h-screen overflow-y-auto">
+    <aside class="bg-primary-content w-80 h-screen overflow-y-auto">
       <!-- アプリロゴ -->
-      <div class="sticky top-0 z-10 flex justify-center bg-base-200">
+      <div
+        class="sticky top-0 z-10 flex justify-center bg-primary text-primary-content"
+      >
         <img
           src="https://angular.io/assets/images/logos/angular/angular.svg"
           alt="Angular Logo"
-          width="80"
-          height="80"
+          width="64"
+          height="64"
         />
       </div>
 
       <!-- メニューリスト -->
       <div class="menu">
         <div class="mb-6">
-          <h2 class="menu-title">メニュー</h2>
+          <h2 class="menu-title text-primary font-bold">メニュー</h2>
           <ul>
             <li>
               <a
                 routerLink="/"
-                routerLinkActive="active"
+                routerLinkActive="text-primary font-bold"
                 [routerLinkActiveOptions]="{ exact: true }"
+                class="hover:text-primary"
               >
                 <app-home-icon></app-home-icon>
                 ホーム
               </a>
             </li>
             <li>
-              <a routerLink="/privacy-policy" routerLinkActive="active">
+              <a
+                routerLink="/privacy-policy"
+                routerLinkActive="text-primary font-bold"
+                class="hover:text-primary"
+              >
                 <app-privacy-icon></app-privacy-icon>
                 プライバシーポリシー
               </a>
             </li>
             <li>
-              <a routerLink="/terms-of-service" routerLinkActive="active">
+              <a
+                routerLink="/terms-of-service"
+                routerLinkActive="text-primary font-bold"
+                class="hover:text-primary"
+              >
                 <app-terms-icon></app-terms-icon>
                 利用規約
               </a>
             </li>
             <li>
-              <a routerLink="/legal" routerLinkActive="active">
+              <a
+                routerLink="/legal"
+                routerLinkActive="text-primary font-bold"
+                class="hover:text-primary"
+              >
                 <app-legal-icon></app-legal-icon>
                 特定商取引法に関わる表示
               </a>
@@ -95,13 +110,14 @@ import { VercelIconComponent } from '../../icons/vercel-icon.component';
         </div>
 
         <div>
-          <h2 class="menu-title">外部リンク</h2>
+          <h2 class="menu-title text-primary font-bold">外部リンク</h2>
           <ul>
             <li>
               <a
                 href="https://github.com/YasunoriMATSUOKA/template-angular-19"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="hover:text-primary"
               >
                 <app-github-icon></app-github-icon>
                 GitHub
@@ -112,7 +128,7 @@ import { VercelIconComponent } from '../../icons/vercel-icon.component';
                 href="https://angular.dev/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center gap-2"
+                class="flex items-center gap-2 hover:text-primary"
               >
                 <app-angular-icon></app-angular-icon>
                 Angular
@@ -123,7 +139,7 @@ import { VercelIconComponent } from '../../icons/vercel-icon.component';
                 href="https://tailwindcss.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center gap-2"
+                class="flex items-center gap-2 hover:text-primary"
               >
                 <app-tailwind-icon></app-tailwind-icon>
                 Tailwind
@@ -134,7 +150,7 @@ import { VercelIconComponent } from '../../icons/vercel-icon.component';
                 href="https://daisyui.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center gap-2"
+                class="flex items-center gap-2 hover:text-primary"
               >
                 <app-daisy-ui-icon></app-daisy-ui-icon>
                 daisyUI
@@ -145,7 +161,7 @@ import { VercelIconComponent } from '../../icons/vercel-icon.component';
                 href="https://eslint.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center gap-2"
+                class="flex items-center gap-2 hover:text-primary"
               >
                 <app-eslint-icon></app-eslint-icon>
                 ESLint
@@ -156,7 +172,7 @@ import { VercelIconComponent } from '../../icons/vercel-icon.component';
                 href="https://prettier.io/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center gap-2"
+                class="flex items-center gap-2 hover:text-primary"
               >
                 <app-prettier-icon></app-prettier-icon>
                 Prettier
@@ -167,7 +183,7 @@ import { VercelIconComponent } from '../../icons/vercel-icon.component';
                 href="https://jasmine.github.io/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center gap-2"
+                class="flex items-center gap-2 hover:text-primary"
               >
                 <app-jasmine-icon></app-jasmine-icon>
                 Jasmine
@@ -178,7 +194,7 @@ import { VercelIconComponent } from '../../icons/vercel-icon.component';
                 href="https://karma-runner.github.io/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center gap-2"
+                class="flex items-center gap-2 hover:text-primary"
               >
                 <app-karma-icon></app-karma-icon>
                 Karma
@@ -189,7 +205,7 @@ import { VercelIconComponent } from '../../icons/vercel-icon.component';
                 href="https://storybook.js.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center gap-2"
+                class="flex items-center gap-2 hover:text-primary"
               >
                 <app-storybook-icon></app-storybook-icon>
                 Storybook

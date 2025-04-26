@@ -7,7 +7,7 @@ import { MenuIconComponent } from '../../icons/menu-icon.component';
   standalone: true,
   imports: [CommonModule, MenuIconComponent],
   template: `
-    <header class="navbar bg-base-100">
+    <header class="navbar bg-primary text-primary-content">
       <!-- ハンバーガーメニューボタン（モバイル用） -->
       <div class="navbar-start">
         <label
@@ -21,7 +21,7 @@ import { MenuIconComponent } from '../../icons/menu-icon.component';
 
       <!-- アプリタイトル -->
       <div class="navbar-center">
-        <a class="btn btn-ghost text-xl">{{ title }}</a>
+        <a class="btn btn-ghost text-xl text-primary-content">{{ title }}</a>
       </div>
 
       <!-- アバターメニュー -->
@@ -41,11 +41,11 @@ import { MenuIconComponent } from '../../icons/menu-icon.component';
           </div>
           <ul
             tabindex="0"
-            class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+            class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 text-neutral rounded-box w-52"
           >
-            <li><a>プロフィール</a></li>
-            <li><a>設定</a></li>
-            <li><a>ログアウト</a></li>
+            <li><a class="hover:text-primary">プロフィール</a></li>
+            <li><a class="hover:text-primary">設定</a></li>
+            <li><a class="hover:text-primary">ログアウト</a></li>
           </ul>
         </div>
       </div>
