@@ -47,11 +47,11 @@ import { VercelIconComponent } from '../../icons/vercel-icon.component';
   ],
   template: `
     <footer
-      class="footer flex flex-col px-10 py-4 bg-primary text-primary-content mt-auto"
+      class="footer flex flex-col px-10 py-4 bg-base-300 text-base-content mt-auto"
     >
       <div class="w-full flex flex-col gap-1 lg:flex-row lg:justify-between">
         <nav>
-          <h6 class="footer-title text-primary-content">リンク</h6>
+          <h6 class="footer-title text-base-content">リンク</h6>
           <div class="flex flex-row flex-wrap gap-4">
             <a routerLink="/" class="link link-hover flex items-center gap-1">
               <app-home-icon class="h-4 w-4"></app-home-icon>
@@ -83,7 +83,7 @@ import { VercelIconComponent } from '../../icons/vercel-icon.component';
       </div>
 
       <nav>
-        <h6 class="footer-title text-primary-content">外部リンク</h6>
+        <h6 class="footer-title text-base-content">外部リンク</h6>
         <div class="flex flex-row flex-wrap gap-4">
           <a
             href="https://github.com/YasunoriMATSUOKA/template-angular-19"
@@ -224,7 +224,7 @@ import { VercelIconComponent } from '../../icons/vercel-icon.component';
       </nav>
 
       <div>
-        <h6 class="footer-title text-primary-content">会社情報</h6>
+        <h6 class="footer-title text-base-content">会社情報</h6>
         <p>
           <a href="https://proof-of-youf-life.io/" class="link"
             >Proof of Your Life</a
