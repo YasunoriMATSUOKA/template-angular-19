@@ -10,10 +10,9 @@ import { Component } from '@angular/core';
         <div class="max-w-md">
           <h1 class="text-5xl font-bold">ホームページ</h1>
           <p class="py-6">
-            これはAngular 19とdaisyUIを使用したテンプレートのホームページです。
-            レスポンシブデザインのドロワーメニューとレイアウトを実装しています。
+            これはAngular 19とTailwind
+            CSSとdaisyUIとSupabaseを使用したテンプレートのホームページです。
           </p>
-          <button class="btn btn-primary">始める</button>
         </div>
       </div>
     </div>
@@ -23,7 +22,7 @@ import { Component } from '@angular/core';
         <div class="card bg-base-100 shadow-xl">
           <figure>
             <img
-              src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+              src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp"
               alt="特徴1"
             />
           </figure>
@@ -35,19 +34,19 @@ import { Component } from '@angular/core';
         <div class="card bg-base-100 shadow-xl">
           <figure>
             <img
-              src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+              src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.webp"
               alt="特徴2"
             />
           </figure>
           <div class="card-body">
             <h2 class="card-title">特徴2</h2>
-            <p>Angular 19の最新機能を活用</p>
+            <p>Angular 19で実装</p>
           </div>
         </div>
         <div class="card bg-base-100 shadow-xl">
           <figure>
             <img
-              src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+              src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.webp"
               alt="特徴3"
             />
           </figure>
