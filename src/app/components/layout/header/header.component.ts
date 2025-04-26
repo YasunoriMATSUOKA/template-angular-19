@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuIconComponent } from '../../icons/menu-icon.component';
 
@@ -21,7 +21,7 @@ import { MenuIconComponent } from '../../icons/menu-icon.component';
 
       <!-- アプリタイトル -->
       <div class="navbar-center">
-        <a class="btn btn-ghost text-xl">App Title</a>
+        <a class="btn btn-ghost text-xl">{{ title }}</a>
       </div>
 
       <!-- アバターメニュー -->
@@ -35,7 +35,7 @@ import { MenuIconComponent } from '../../icons/menu-icon.component';
             <div class="w-10 rounded-full">
               <img
                 alt="ユーザーアバター"
-                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
               />
             </div>
           </div>
@@ -53,4 +53,7 @@ import { MenuIconComponent } from '../../icons/menu-icon.component';
   `,
   styles: [],
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  @Input()
+  title = 'Template Angular 19';
+}
