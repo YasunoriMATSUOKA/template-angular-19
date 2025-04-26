@@ -75,22 +75,21 @@ jobs:
           path: node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
           fail-on-cache-miss: true
-      - name: Restore environment.development.ts
+      - name: Restore environment files
         run: |
           cat << EOF > src/environments/environment.development.ts
           export const environment = {
-            production: ${{secrets.PRODUCTION}},
-            supabaseUrl: ${{secrets.SUPABASE_URL}},
-            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+            production: false,
+            supabaseUrl: '${{secrets.SUPABASE_URL}}',
+            supabaseAnonKey: '${{secrets.SUPABASE_ANON_KEY}}',
           };
           EOF
-      - name: Restore environment.ts
-        run: |
-          cat << EOF > src/environments/environment.development.ts
+
+          cat << EOF > src/environments/environment.ts
           export const environment = {
-            production: ${{secrets.PRODUCTION}},
-            supabaseUrl: ${{secrets.SUPABASE_URL}},
-            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+            production: true,
+            supabaseUrl: '${{secrets.SUPABASE_URL}}',
+            supabaseAnonKey: '${{secrets.SUPABASE_ANON_KEY}}',
           };
           EOF
       - name: Build
@@ -111,22 +110,21 @@ jobs:
           path: node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
           fail-on-cache-miss: true
-      - name: Restore environment.development.ts
+      - name: Restore environment files
         run: |
           cat << EOF > src/environments/environment.development.ts
           export const environment = {
-            production: ${{secrets.PRODUCTION}},
-            supabaseUrl: ${{secrets.SUPABASE_URL}},
-            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+            production: false,
+            supabaseUrl: '${{secrets.SUPABASE_URL}}',
+            supabaseAnonKey: '${{secrets.SUPABASE_ANON_KEY}}',
           };
           EOF
-      - name: Restore environment.ts
-        run: |
-          cat << EOF > src/environments/environment.development.ts
+
+          cat << EOF > src/environments/environment.ts
           export const environment = {
-            production: ${{secrets.PRODUCTION}},
-            supabaseUrl: ${{secrets.SUPABASE_URL}},
-            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+            production: true,
+            supabaseUrl: '${{secrets.SUPABASE_URL}}',
+            supabaseAnonKey: '${{secrets.SUPABASE_ANON_KEY}}',
           };
           EOF
       - name: Test
@@ -147,22 +145,21 @@ jobs:
           path: node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
           fail-on-cache-miss: true
-      - name: Restore environment.development.ts
+      - name: Restore environment files
         run: |
           cat << EOF > src/environments/environment.development.ts
           export const environment = {
-            production: ${{secrets.PRODUCTION}},
-            supabaseUrl: ${{secrets.SUPABASE_URL}},
-            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+            production: false,
+            supabaseUrl: '${{secrets.SUPABASE_URL}}',
+            supabaseAnonKey: '${{secrets.SUPABASE_ANON_KEY}}',
           };
           EOF
-      - name: Restore environment.ts
-        run: |
-          cat << EOF > src/environments/environment.development.ts
+
+          cat << EOF > src/environments/environment.ts
           export const environment = {
-            production: ${{secrets.PRODUCTION}},
-            supabaseUrl: ${{secrets.SUPABASE_URL}},
-            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+            production: true,
+            supabaseUrl: '${{secrets.SUPABASE_URL}}',
+            supabaseAnonKey: '${{secrets.SUPABASE_ANON_KEY}}',
           };
           EOF
       - name: Build storybook
@@ -185,22 +182,21 @@ jobs:
           path: node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
           fail-on-cache-miss: true
-      - name: Restore environment.development.ts
+      - name: Restore environment files
         run: |
           cat << EOF > src/environments/environment.development.ts
           export const environment = {
-            production: ${{secrets.PRODUCTION}},
-            supabaseUrl: ${{secrets.SUPABASE_URL}},
-            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+            production: false,
+            supabaseUrl: '${{secrets.SUPABASE_URL}}',
+            supabaseAnonKey: '${{secrets.SUPABASE_ANON_KEY}}',
           };
           EOF
-      - name: Restore environment.ts
-        run: |
-          cat << EOF > src/environments/environment.development.ts
+
+          cat << EOF > src/environments/environment.ts
           export const environment = {
-            production: ${{secrets.PRODUCTION}},
-            supabaseUrl: ${{secrets.SUPABASE_URL}},
-            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+            production: true,
+            supabaseUrl: '${{secrets.SUPABASE_URL}}',
+            supabaseAnonKey: '${{secrets.SUPABASE_ANON_KEY}}',
           };
           EOF
       - name: Publish storybook
@@ -226,22 +222,21 @@ jobs:
           fail-on-cache-miss: true
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Restore environment.development.ts
+      - name: Restore environment files
         run: |
           cat << EOF > src/environments/environment.development.ts
           export const environment = {
-            production: ${{secrets.PRODUCTION}},
-            supabaseUrl: ${{secrets.SUPABASE_URL}},
-            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+            production: false,
+            supabaseUrl: '${{secrets.SUPABASE_URL}}',
+            supabaseAnonKey: '${{secrets.SUPABASE_ANON_KEY}}',
           };
           EOF
-      - name: Restore environment.ts
-        run: |
-          cat << EOF > src/environments/environment.development.ts
+
+          cat << EOF > src/environments/environment.ts
           export const environment = {
-            production: ${{secrets.PRODUCTION}},
-            supabaseUrl: ${{secrets.SUPABASE_URL}},
-            supabaseAnonKey: ${{secrets.SUPABASE_ANON_KEY}},
+            production: true,
+            supabaseUrl: '${{secrets.SUPABASE_URL}}',
+            supabaseAnonKey: '${{secrets.SUPABASE_ANON_KEY}}',
           };
           EOF
       - name: Run Playwright tests
