@@ -48,6 +48,7 @@
     "@storybook/angular": "^8.6.12",
     "@storybook/blocks": "^8.6.12",
     "@storybook/test": "^8.6.12",
+    "@tailwindcss/typography": "^0.5.16",
     "@testing-library/angular": "^17.3.7",
     "@testing-library/dom": "^10.0.0",
     "@testing-library/jest-dom": "^6.4.8",
