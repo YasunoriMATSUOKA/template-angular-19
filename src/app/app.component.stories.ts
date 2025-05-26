@@ -1,6 +1,6 @@
-import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { AppComponent } from './app.component';
-import { RouterOutlet } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 // AppComponentのメタ情報を設定
 const meta: Meta<AppComponent> = {
@@ -9,10 +9,9 @@ const meta: Meta<AppComponent> = {
   tags: ['autodocs'],
   decorators: [
     moduleMetadata({
-      imports: [RouterOutlet],
+      imports: [RouterTestingModule],
     }),
   ],
-  // router-outletを扱うためのパラメータがある場合は追加
 };
 
 export default meta;
