@@ -1,15 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  template: `
-    <h1 class="text-3xl font-bold underline">Welcome to {{ title }}!</h1>
-
-    <router-outlet />
-  `,
-  styles: [],
+  standalone: true,
+  imports: [LayoutComponent],
+  template: `<app-layout [title]="title"></app-layout>`,
 })
 export class AppComponent {
   title = 'template-angular-19';
