@@ -55,7 +55,7 @@
     "@types/jasmine": "~5.1.0",
     "@types/node": "^22.14.0",
     "angular-eslint": "19.3.0",
-    "chromatic": "^11.28.0",
+    "chromatic": "^13.0.0",
     "daisyui": "^5.0.28",
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
